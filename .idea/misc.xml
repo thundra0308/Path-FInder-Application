@@ -3,7 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/button_background.xml" value="0.252" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/button_background2.xml" value="0.252" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/ripple_background_reset.xml" value="0.252" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/ripple_background_reset2.xml" value="0.252" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/rv_background.xml" value="0.252" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/drawable/selected_algo_background.xml" value="0.252" />
         <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/layout/activity_main.xml" value="0.264" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/layout/recyclerview_item.xml" value="0.27447916666666666" />
+        <entry key="..\:/My Android Apps/PathFinder/app/src/main/res/layout/rvitem.xml" value="0.27447916666666666" />
       </map>
     </option>
   </component>

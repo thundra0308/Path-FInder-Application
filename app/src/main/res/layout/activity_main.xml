@@ -5,90 +5,88 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:paddingLeft="15dp"
-    android:paddingRight="15dp"
     tools:context=".MainActivity">
 
-    <com.google.android.material.appbar.MaterialToolbar
-        android:id="@+id/toolbar_top"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        app:title="PATH FINDER"
+        android:gravity="center"
+        android:layout_height="?android:attr/actionBarSize"
+        android:background="#3C3C3C"
+        app:layout_constraintTop_toTopOf="parent"
+        app:titleTextColor="@color/white" />
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        android:layout_marginStart="10dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/pathGrid"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:fontFamily="@font/open_sans_light"-->
+<!--            android:text="SELECT ALGO"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#EAEAEA"-->
+<!--            android:textSize="15sp" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/algo_spinner"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:popupBackground="#2C2C2C"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />-->
+
+
+<!--    </LinearLayout>-->
+
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="horizontal"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/pathGrid"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center_vertical"-->
+<!--            android:fontFamily="@font/open_sans_light"-->
+<!--            android:text="SPEED"-->
+<!--            android:textAllCaps="false"-->
+<!--            android:textColor="#EAEAEA"-->
+<!--            android:textSize="15sp" />-->
+
+<!--        <Spinner-->
+<!--            android:id="@+id/speed_spinner"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:popupBackground="#2C2C2C"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />-->
+
+
+<!--    </LinearLayout>-->
+
+    <LinearLayout
+        android:id="@+id/llgrid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#333333"
-        android:minHeight="?android:attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingLeft="15dp"
+        android:paddingRight="11dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@id/rvalgo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-
-        <TextView
-            android:id="@+id/toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/open_sans_light"
-            android:text="@string/app_name"
-            android:textSize="24sp" />
-
-    </com.google.android.material.appbar.MaterialToolbar>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/pathGrid"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="@font/open_sans_light"
-            android:text="SELECT ALGO"
-            android:textAllCaps="false"
-            android:textColor="#EAEAEA"
-            android:textSize="15sp" />
-
-        <Spinner
-            android:id="@+id/algo_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:popupBackground="#2C2C2C"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
-
-
-    </LinearLayout>
-
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/pathGrid"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:fontFamily="@font/open_sans_light"
-            android:text="SPEED"
-            android:textAllCaps="false"
-            android:textColor="#EAEAEA"
-            android:textSize="15sp" />
-
-        <Spinner
-            android:id="@+id/speed_spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:popupBackground="#2C2C2C"
-            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />
-
-
-    </LinearLayout>
-
+        >
 
     <com.example.pathfinder.board.Grid
         android:id="@+id/pathGrid"
@@ -97,7 +95,6 @@
         app:exploreColor="#CBFFBE85"
         app:exploreHeadColor="#0494DA"
         app:finalPathColor="#CBC6FF00"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_top"
         app:endColor="#FF1414"
         app:gridColor="#DFBF9C"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,36 +104,65 @@
         app:obstacleColor="#000000"
         app:startColor="#CB04ADFF" />
 
-    <Button
-        android:id="@+id/btn_reset"
-        style="?attr/materialButtonOutlinedStyle"
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvalgo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llgrid"
+        app:layout_constraintBottom_toTopOf="@id/flreset"/>
+
+
+    <FrameLayout
+        android:id="@+id/flreset"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:backgroundTint="@color/white"
-        android:fontFamily="@font/open_sans_light"
-        android:text="RESET"
-        android:textColor="#FF9800"
-        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/ripple_background_reset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pathGrid"
-        app:rippleColor="#FFECB3" />
+        app:layout_constraintTop_toBottomOf="@+id/llgrid">
 
-    <Button
-        android:id="@+id/btn_solve"
-        style="?attr/materialButtonOutlinedStyle"
+    <TextView
+        android:id="@+id/reset"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="RESET"
+        android:gravity="center"
+        android:fontFamily="@font/open_sans_light"
+        android:layout_gravity="center"
+        android:textColor="#FF0000"
+        android:textStyle="bold"/>
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/flsolve"
         android:layout_width="100dp"
         android:layout_height="50dp"
-        android:backgroundTint="#FF9800"
-        android:fontFamily="@font/open_sans_light"
-        android:text="SOLVE"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_reset"
+        android:background="@drawable/ripple_background_reset2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline3"
-        app:rippleColor="#FFECB3" />
+        app:layout_constraintTop_toTopOf="@+id/flreset"
+        app:layout_constraintBottom_toBottomOf="@+id/flreset"
+        app:layout_constraintStart_toStartOf="@+id/guideline3">
+
+    <TextView
+        android:id="@+id/solve"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="SOLVE"
+        android:gravity="center"
+        android:fontFamily="@font/open_sans_light"
+        android:layout_gravity="center"
+        android:textColor="#C8FF00"
+        android:textStyle="bold"/>
+
+    </FrameLayout>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline3"
