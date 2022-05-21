@@ -7,21 +7,21 @@ import kotlinx.coroutines.delay
 class Finder {
     var startX = 1
     var startY = 1
-    var endX = 25
-    var endY = 25
-    var obstacleX = 13
-    var obstacleY = 13
+    var endX = 15
+    var endY = 15
+    var obstacleX = 8
+    var obstacleY = 8
 
 
-    private val rows = 26
-    private val cols = 26
+    private val rows = 16
+    private val cols = 16
 
     val board = Array(rows) { IntArray(cols) }
 
     init {
         board[1][1] = START_CELL_CODE //for Start
-        board[13][13] = OBSTACLE_CELL_CODE //for obstacle
-        board[25][25] = END_CELL_CODE //for End
+        board[8][8] = OBSTACLE_CELL_CODE //for obstacle
+        board[15][15] = END_CELL_CODE //for End
     }
 
     companion object {
@@ -36,22 +36,22 @@ class Finder {
 
     fun resetGrid() {
 
-        for (i in 1..25) {
+        for (i in 1..15) {
             for (j in 1..15) {
                 board[i][j] = EMPTY_CELL_CODE
             }
         }
         startX = 1
         startY = 1
-        endX = 25
-        endY = 25
+        endX = 15
+        endY = 15
 
-        obstacleX = 13
-        obstacleY = 13
+        obstacleX = 8
+        obstacleY = 8
 
         board[1][1] = START_CELL_CODE //for Start
-        board[13][13] = OBSTACLE_CELL_CODE //for obstacle
-        board[25][25] = END_CELL_CODE //for End
+        board[8][8] = OBSTACLE_CELL_CODE //for obstacle
+        board[15][15] = END_CELL_CODE //for End
 //        clearCells()
     }
 
@@ -106,8 +106,8 @@ class Finder {
     * Clears the cell to it's default state
     * */
     private fun clearCells() {
-        for (i in 1..25) {
-            for (j in 1..25) {
+        for (i in 1..15) {
+            for (j in 1..15) {
                 if (board[i][j] == EXPLORE_CELL_CODE ||
                     board[i][j] == EXPLORE_HEAD_CELL_CODE ||
                     board[i][j] == FINAL_PATH_CELL_CODE

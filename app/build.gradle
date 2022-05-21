@@ -33,6 +33,7 @@ android {
             viewBinding = true
         }
     }
+    namespace 'com.example.pathfinder'
 }
 
 dependencies {

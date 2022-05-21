@@ -74,7 +74,7 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
         val height = MeasureSpec.getSize(heightMeasureSpec)
         val width = MeasureSpec.getSize(widthMeasureSpec)
         val dimension = min(height, width)
-        cellSize = dimension / 25
+        cellSize = dimension / 15
         setMeasuredDimension(dimension, dimension)
     }
 
@@ -87,8 +87,8 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
         setPaint(obstaclePaintColor, obstacleColor)
         colorObstacleCell(canvas, _finder.obstacleY, _finder.obstacleX)
 
-        for (i in 1..25) {
-            for (j in 1..25) {
+        for (i in 1..15) {
+            for (j in 1..15) {
                 if (_finder.board[i][j] == OBSTACLE_CELL_CODE) {
                     setPaint(obstaclePaintColor, obstacleColor)
                     colorObstacleCell(canvas, i, j)
@@ -145,8 +145,8 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     fun getFinder() = this._finder
 
     private fun drawGrid(canvas: Canvas) {
-        for (i in 1..25) {
-            for (j in 1..25) {
+        for (i in 1..15) {
+            for (j in 1..15) {
                 val rectF = RectF(
                     (((j - 1) * cellSize) + 5.toFloat()),
                     (((i - 1) * cellSize) + 5.toFloat()),
@@ -154,7 +154,7 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
                     ((i * cellSize) - 5.toFloat())
                 )
 
-                val cornersRadius = 0
+                val cornersRadius = 5
                 canvas.drawRoundRect(
                     rectF,  // rect
                     cornersRadius.toFloat(),  // rx
@@ -209,7 +209,7 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
 
     private fun moveCell(x: Int, y: Int, turn: Int, firstTouch: Int) {
         if (turn == START_BLOCK_TURN) {
-            if (x >= 1 && y >= 1 && x <= 25 && y <= 25 &&
+            if (x >= 1 && y >= 1 && x <= 15 && y <= 15 &&
                 (_finder.board[y][x] == EMPTY_CELL_CODE)
             ) {
                 _finder.board[_finder.startY][_finder.startX] = EMPTY_CELL_CODE
@@ -218,7 +218,7 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
                 _finder.board[_finder.startY][_finder.startX] = START_CELL_CODE
             }
         } else if (turn == END_BLOCK_TURN) {
-            if (x >= 1 && y >= 1 && x <= 25 && y <= 25 &&
+            if (x >= 1 && y >= 1 && x <= 15 && y <= 15 &&
                 (_finder.board[y][x] == EMPTY_CELL_CODE)
             ) {
                 _finder.board[_finder.endY][_finder.endX] = EMPTY_CELL_CODE
@@ -227,7 +227,7 @@ class Grid(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
                 _finder.board[_finder.endY][_finder.endX] = END_CELL_CODE
             }
         } else {
-            if (x >= 1 && y >= 1 && x <= 25 && y <= 25 &&
+            if (x >= 1 && y >= 1 && x <= 15 && y <= 15 &&
                 !(x == _finder.startX && y == _finder.startY) &&
                 !(x == _finder.endX && y == _finder.endY) &&
                 (abs(x - _finder.obstacleX) >= 1 || abs(y - _finder.obstacleY) >= 1 || firstTouch == 1)

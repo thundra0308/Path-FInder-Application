@@ -17,63 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:titleTextColor="@color/white" />
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        android:layout_marginStart="10dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/pathGrid"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:fontFamily="@font/open_sans_light"-->
-<!--            android:text="SELECT ALGO"-->
-<!--            android:textAllCaps="false"-->
-<!--            android:textColor="#EAEAEA"-->
-<!--            android:textSize="15sp" />-->
-
-<!--        <Spinner-->
-<!--            android:id="@+id/algo_spinner"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:popupBackground="#2C2C2C"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />-->
-
-
-<!--    </LinearLayout>-->
-
-
-<!--    <LinearLayout-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/pathGrid"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/toolbar_top">-->
-
-<!--        <TextView-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center_vertical"-->
-<!--            android:fontFamily="@font/open_sans_light"-->
-<!--            android:text="SPEED"-->
-<!--            android:textAllCaps="false"-->
-<!--            android:textColor="#EAEAEA"-->
-<!--            android:textSize="15sp" />-->
-
-<!--        <Spinner-->
-<!--            android:id="@+id/speed_spinner"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:popupBackground="#2C2C2C"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/toolbar_top" />-->
-
-
-<!--    </LinearLayout>-->
 
     <LinearLayout
         android:id="@+id/llgrid"
@@ -110,7 +53,8 @@
         android:id="@+id/rvalgo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+        android:layout_margin="10dp"
+        android:padding="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/llgrid"
@@ -132,6 +76,7 @@
         android:id="@+id/reset"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/ripple_background_reset"
         android:text="RESET"
         android:gravity="center"
         android:fontFamily="@font/open_sans_light"
@@ -156,6 +101,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="SOLVE"
+        android:background="@drawable/ripple_background_reset2"
         android:gravity="center"
         android:fontFamily="@font/open_sans_light"
         android:layout_gravity="center"

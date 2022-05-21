@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        val adapter = Adapter(AlgoList.algoList)
+        val adapter = Adapter(AlgoList.algoList1, AlgoList.algoList2)
         binding?.rvalgo?.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         binding?.rvalgo?.adapter = adapter
 
